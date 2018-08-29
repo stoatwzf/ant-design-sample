@@ -18,7 +18,7 @@ const config = {
 				options: {
 					presets: ['@babel/preset-env', '@babel/preset-react'],
 					plugins: [
-						'@babel/plugin-syntax-class-properties',
+						'transform-class-properties',
 						['@babel/plugin-syntax-decorators', { legacy: true }],
 						'@babel/plugin-syntax-object-rest-spread',
 						["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
