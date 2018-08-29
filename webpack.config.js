@@ -21,10 +21,21 @@ const config = {
 						'@babel/plugin-syntax-class-properties',
 						['@babel/plugin-syntax-decorators', { legacy: true }],
 						'@babel/plugin-syntax-object-rest-spread',
-						["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+						["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
 					]
 				}
 			}
+		}, {
+			test: /\.less$/,
+			use: ['style-loader', 'css-loader', {
+				loader: 'less-loader',
+				options: {
+					modifyVars: {
+						'primary-color': 'orange'
+					},
+					javascriptEnabled: true
+				}
+			}]
 		}, {
 			test: /\.css$/,
 			use: ['style-loader', 'css-loader']

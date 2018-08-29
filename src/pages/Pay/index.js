@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'antd';
 
 class Detail extends Component {
 	render (){
@@ -7,7 +8,7 @@ class Detail extends Component {
 			<p>
 				Price: $200.00
 			</p>
-			<input type="button" value="pay" />
+			<Button type="primary">Pay</Button>
 		</div>);
 	}
 }
