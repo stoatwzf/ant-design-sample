@@ -44,7 +44,7 @@ class LayPage extends Component {
 							</SubMenu>
 						</Menu>
 					</Sider>
-					<Content>{this.props.children}</Content>
+					<Content style={{ padding: '20px' }}>{this.props.children}</Content>
 				</Layout>
 			</Content>);
 	}

@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import { Dropdown, Icon, Menu } from 'antd';
+import { Dropdown, Icon, Menu, Pagination, Avatar, Badge, List,  Popover } from 'antd';
+import productList from '../../util/list.json';
 
-class List extends Component {
+class ListPage extends Component {
 	render (){
-		const menu = (<Menu>
-			<Menu.Item>1st menu item</Menu.Item>
-			<Menu.Item>1st menu item</Menu.Item>
-			<Menu.Item>1st menu item</Menu.Item>
-			<Menu.Item>1st menu item</Menu.Item>
-			<Menu.Item>1st menu item</Menu.Item>
-		</Menu>);
+		const content = (<div>
+			<p>content</p>
+			<p>content</p>
+			<p>content</p>
+		</div>);
 
-		return (<ul>
-			<li>
-				<Dropdown overlay={menu}>
-					<p>product list 0<Icon type="down"/></p>
-				</Dropdown>
-			</li>
-			<li>product list 1</li>
-			<li>product list 2</li>
-			<li>product list 3</li>
-			<li>product list 4</li>
-		</ul>);
+		return (<div>
+			<Badge count={5}>
+	      <a href="#" className="head-example" />
+	    </Badge>
+			<List
+				dataSource={productList.list}
+				renderItem={item => (
+					<List.Item>
+						<Popover content={content} title="Title">
+							<Avatar icon={item.avatar} />{item.text}
+						</Popover>
+					</List.Item>
+				)}
+			/>
+			<Pagination defaultCurrent={1} total={50} />
+		</div>);
 	}
 }
 
-export default List;
+export default ListPage;

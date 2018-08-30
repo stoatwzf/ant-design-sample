@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import List from './pages/List';
 import Detail from './pages/Detail';
 import Pay from './pages/Pay';
+import Plat from './pages/Plat';
 import Layout from './components/Layout';
 import SubLayout from './components/SubLayout';
 
@@ -16,7 +17,7 @@ const Router = props => (
 	<BrowserRouter>
 		<Layout>
 			<Route exact path="/" component={Home} />
-			<Route path="/home2" component={Home} />
+			<Route path="/home2" component={Plat} />
 			<Route path="/home3" component={Home3} />
 			<Route path="/home4" component={Home} />
 		</Layout>
